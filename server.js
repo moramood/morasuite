@@ -118,7 +118,7 @@ async function start() {
       logger.info(`╚══════════════════════════════════════════╝`);
     });
   } catch (err) {
-    logger.error('Error fatal al iniciar el servidor:', err);
+    console.error('ERROR CRÍTICO AL INICIAR:', err);
     process.exit(1);
   }
 }
