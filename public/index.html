@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MoraSuite — Sistema POS profesional para Mora Mood">
+  <title>MoraSuite | Mora Mood</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="img/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- LOGIN -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-card">
+      <div class="login-logo">
+        <img src="img/logo.png" alt="Mora Mood Logo" class="login-logo-img"
+          onerror="this.onerror=null;this.src='img/logo.png'">
+        <h1>Mōra Suite</h1>
+        <p>Sistema POS Profesional para Mora Mood</p>
+      </div>
+
+      <form class="login-form" id="loginForm">
+        <div id="lError" class="login-error"></div>
+
+        <div class="fg">
+          <label class="fl">USUARIO</label>
+          <div style="position:relative">
+            <input class="fi" type="text" id="lUser" placeholder="Ingresa tu usuario" required autocomplete="username"
+              style="width:100%;padding-right:36px">
+            <svg
+              style="position:absolute;right:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;fill:var(--text-3)"
+              viewBox="0 0 24 24">
+              <path
+                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="fg">
+          <label class="fl">CONTRASEÑA</label>
+          <div style="position:relative">
+            <input class="fi" type="password" id="lPass" placeholder="Ingresa tu contraseña" required
+              autocomplete="current-password" style="width:100%;padding-right:36px">
+            <svg
+              style="position:absolute;right:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;fill:var(--text-3)"
+              viewBox="0 0 24 24">
+              <path
+                d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+            </svg>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-top:2px">
+          <input type="checkbox" id="keepSigned"
+            style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer">
+          <label for="keepSigned" style="font-size:.85rem;color:var(--text-2);cursor:pointer">
+            Mantener sesión iniciada
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="loginBtn" style="margin-top:6px;gap:10px">
+          Iniciar sesión
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+            <path
+              d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6a.996.996 0 1 0-1.41 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z" />
+          </svg>
+        </button>
+      </form>
+
+      <form class="login-form" id="registerForm" style="display:none;">
+        <div id="rError" class="login-error"></div>
+
+        <div class="fg">
+          <label class="fl">NUEVO USUARIO</label>
+          <div style="position:relative">
+            <input class="fi" type="text" id="rUser" placeholder="Elige un usuario de acceso" required
+              style="width:100%;padding-right:36px">
+            <svg
+              style="position:absolute;right:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;fill:var(--text-3)"
+              viewBox="0 0 24 24">
+              <path
+                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="fg">
+          <label class="fl">NOMBRE A MOSTRAR</label>
+          <div style="position:relative">
+            <input class="fi" type="text" id="rName" placeholder="Tu nombre y apellido" required
+              style="width:100%;padding-right:36px">
+            <svg
+              style="position:absolute;right:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;fill:var(--text-3)"
+              viewBox="0 0 24 24">
+              <path
+                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="fg">
+          <label class="fl">NÚMERO DE DOCUMENTO</label>
+          <div style="position:relative">
+            <input class="fi" type="text" id="rDoc" placeholder="Ej: 123456789" required
+              style="width:100%;padding-right:36px">
+            <svg
+              style="position:absolute;right:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;fill:var(--text-3)"
+              viewBox="0 0 24 24">
+              <path
+                d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="fg">
+          <label class="fl">CONTRASEÑA (mínimo 6 caracteres)</label>
+          <div style="position:relative">
+            <input class="fi" type="password" id="rPass" placeholder="Crea una contraseña" required
+              style="width:100%;padding-right:36px">
+            <svg
+              style="position:absolute;right:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;fill:var(--text-3)"
+              viewBox="0 0 24 24">
+              <path
+                d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+            </svg>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="registerBtn" style="margin-top:6px;gap:10px">
+          Crear cuenta
+        </button>
+      </form>
+
+      <div style="text-align:center;margin-top:16px;font-size:.85rem">
+        <a href="#" id="toggleAuthMode" style="color:var(--primary);text-decoration:none;font-weight:600">
+          ¿No tienes cuenta? Regístrate
+        </a>
+      </div>
+
+      <p
+        style="text-align:center;margin-top:24px;font-size:.75rem;color:var(--text-3);display:flex;align-items:center;justify-content:center;gap:6px">
+        <svg fill="var(--success)" width="12" height="12" viewBox="0 0 24 24">
+          <path
+            d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" />
+        </svg>
+        Protegido contra CSRF &copy; 2026 MoraSuite Management
+      </p>
+      </p>
+    </div>
+  </div>
+
+  <!-- APP -->
+  <div class="app" id="app">
+    <header class="app-header">
+      <div class="hdr-brand">
+        <img src="img/logo.png" alt="Logo" class="hdr-brand-img" onerror="this.onerror=null;this.src='img/logo.png'">
+        <h2>MoraSuite</h2>
+      </div>
+      <span class="hdr-mod-name" id="hModName"></span>
+      <div class="hdr-right">
+        <div class="hdr-user">
+          <div>
+            <div class="hdr-uname" id="hName"></div>
+            <div class="hdr-urole" id="hRole"></div>
+          </div>
+          <div class="hdr-avatar" id="hAvatar"></div>
+        </div>
+        <button class="btn btn-ghost btn-sm" id="logoutBtn">Salir</button>
+      </div>
+    </header>
+
+    <div class="app-body">
+      <!-- SIDEBAR -->
+      <nav class="mod-sidebar" id="modSidebar"></nav>
+
+      <!-- MAIN AREA -->
+      <div class="main-wrap">
+        <!-- POS VIEW -->
+        <div class="pos-wrap" id="posWrap">
+          <div class="pos-main">
+            <div class="pos-search">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+              </svg>
+              <input type="text" id="posSearchInput" placeholder="Buscar producto por nombre...">
+            </div>
+            <div class="pos-grid-wrap">
+              <div class="pos-grid" id="posGrid"></div>
+            </div>
+          </div>
+          <aside class="order-panel">
+            <div class="op-hdr">
+              <h3>🧾 Pedido</h3>
+              <div class="op-hdr-sub" id="opCount">Sin items</div>
+            </div>
+            <div class="op-client" id="opClient"></div>
+            <div class="op-items" id="opItems"></div>
+            <div class="op-summary">
+              <div class="op-row"><span>Subtotal</span><span id="opSub">$0</span></div>
+              <div class="op-row op-total"><span>Total</span><span id="opTot">$0</span></div>
+            </div>
+            <div class="op-actions">
+              <button class="btn btn-primary btn-block btn-lg" id="completeBtn" disabled>✅ Completar Venta</button>
+              <button class="btn btn-ghost btn-block btn-sm" id="clearBtn">Limpiar</button>
+            </div>
+          </aside>
+        </div>
+
+        <!-- MODULE VIEWS -->
+        <div id="modViews" style="display:none;flex:1;flex-direction:column;overflow:hidden">
+          <div class="mod-view" id="view_dashboard"></div>
+          <div class="mod-view" id="view_products"></div>
+          <div class="mod-view" id="view_clients"></div>
+          <div class="mod-view" id="view_history"></div>
+          <div class="mod-view" id="view_usuarios"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="app-footer">
+      MoraSuite | Desarrollador José Fernando Julio Hernandez — Todos los derechos reservados
+    </footer>
+  </div>
+
+  <div class="toast-c"></div>
+
+  <!-- Receipt modal (hidden, used for JPG generation) -->
+  <div id="receiptContainer" style="position:fixed;left:-9999px;top:0;z-index:-1;"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/modules.js"></script>
+</body>
+
+</html>
